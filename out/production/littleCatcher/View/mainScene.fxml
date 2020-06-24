@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="View.mainController">
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Text fx:id="message" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"
+                              wrappingWidth="999.240234375" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="28.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                    <children>
+                        <TextArea fx:id="NICMessage" editable="false" prefHeight="158.0" prefWidth="604.0"
+                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                  AnchorPane.topAnchor="0.0"/>
+                        <VBox prefHeight="158.0" prefWidth="177.0" AnchorPane.bottomAnchor="0.0"
+                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="输入要分析的网卡："
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                                        <TextField fx:id="NICNumber" prefHeight="53.0" prefWidth="153.0"
+                                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                                    </children>
+                                </HBox>
+                                <CheckBox fx:id="promiscuous" mnemonicParsing="false" prefHeight="49.0"
+                                          prefWidth="163.0" selected="true" text="混杂模式" textAlignment="CENTER"
+                                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                                <Button fx:id="transButton" mnemonicParsing="false" onAction="#runSenderWindow"
+                                        prefHeight="61.0" prefWidth="171.0" text="转到发送窗口"/>
+                            </children>
+                        </VBox>
+                        <Button fx:id="startButton" mnemonicParsing="false" onAction="#startRunning" prefHeight="157.0"
+                                prefWidth="134.0" text="开始" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                        <Button fx:id="stopButton" mnemonicParsing="false" onAction="#stopRunning" prefHeight="157.0"
+                                prefWidth="134.0" text="停止"/>
+                    </children>
+                </HBox>
+                <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="0.0">
+                    <content>
+                        <TableView fx:id="table" prefHeight="688.0" AnchorPane.bottomAnchor="0.0"
+                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columns>
+                                <TableColumn fx:id="frameNo" editable="false" prefWidth="40.0" sortable="false"
+                                             text="帧序号"/>
+                                <TableColumn fx:id="arriveTime" editable="false" prefWidth="200.0" sortable="false"
+                                             text="邮戳时间"/>
+                                <TableColumn fx:id="srcEth" editable="false" prefWidth="125.0" sortable="false"
+                                             text="以太网源地址"/>
+                                <TableColumn fx:id="srcLGIG" editable="false" prefWidth="100.0" sortable="false"
+                                             text="源策略"/>
+                                <TableColumn fx:id="destEth" editable="false" prefWidth="125.0" sortable="false"
+                                             text="以太网目标地址"/>
+                                <TableColumn fx:id="destLGIG" editable="false" prefWidth="100.0" sortable="false"
+                                             text="目标策略"/>
+                                <TableColumn fx:id="srcIp" editable="false" prefWidth="125.0" sortable="false"
+                                             text="IP源地址"/>
+                                <TableColumn fx:id="destIp" editable="false" prefWidth="125.0" sortable="false"
+                                             text="IP目标地址"/>
+                                <TableColumn fx:id="protocol" editable="false" prefWidth="50.0" sortable="false"
+                                             text="协议"/>
+                                <TableColumn fx:id="srcPort" editable="false" prefWidth="140.0" sortable="false"
+                                             text="源端口"/>
+                                <TableColumn fx:id="destPort" editable="false" prefWidth="140.0" sortable="false"
+                                             text="目标端口"/>
+                                <TableColumn fx:id="ack" editable="false" prefWidth="100.0" sortable="false"
+                                             text="ACK号"/>
+                                <TableColumn fx:id="seq" editable="false" prefWidth="100.0" sortable="false"
+                                             text="SEQ号"/>
+                                <TableColumn fx:id="data" editable="false" prefWidth="175.0" sortable="false"
+                                             text="数据"/>
+                            </columns>
+                        </TableView>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
