@@ -1,5 +1,6 @@
 # Little-Package-Catcher
 a primary imitation of wireshark, pure personal work.
+Java x JavaFX (fxml)
 
 My project for Computer Networks, can sniff and send packages, with a little bug.
 Welcome to be my cooperator, if you can add some more functions such as statistic and analysis or deal with the bug.
