@@ -1,2 +1,2 @@
 # Little-Package-Catcher
-an primary imitation of wireshark
+a primary imitation of wireshark
