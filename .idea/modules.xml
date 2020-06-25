@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/littleCatcher.iml" filepath="$PROJECT_DIR$/littleCatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LittlePackageCatcher.iml" filepath="$PROJECT_DIR$/LittlePackageCatcher.iml" />
     </modules>
   </component>
 </project>

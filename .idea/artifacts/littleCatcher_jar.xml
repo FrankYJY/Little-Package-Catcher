@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="littleCatcher:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/littleCatcher_jar</output-path>
     <root id="archive" name="littleCatcher.jar">
-      <element id="module-output" name="littleCatcher" />
+      <element id="module-output" name="LittlePackageCatcher" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jnetpcap.jar" path-in-jar="/" />
     </root>
   </artifact>
